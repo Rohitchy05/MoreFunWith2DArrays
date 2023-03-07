@@ -37,7 +37,14 @@ public class MoreFunWith2DArrays
     // (as a double) of all elements in numArray
     public static double average(int[][] numArray)
     {
-        /* IMPLEMENT ME! */
+        double sum = 0;
+        int numberOfElements = numArray.length * numArray[0].length;
+        for (int i = 0; i < numArray.length; i++) {
+            for (int j = 0; j < numArray[0].length; j++) {
+                sum += numArray[i][j];
+            }
+        }
+        return sum / numberOfElements;
     }
 
     // Write the indexFound method below to return an array
@@ -53,7 +60,19 @@ public class MoreFunWith2DArrays
     // PRECONDITION: target is only in strArray at most once
     public static int[] indexFound(String[][] strArray, String target)
     {
-        /* IMPLEMENT ME! */
+        int[] arr = new int[2];
+        for (int i = 0; i < strArray.length; i++) {
+            for (int j = 0; j < strArray[0].length; j++) {
+                if (strArray[i][j].equals(target)) {
+                    arr[0] = i;
+                    arr[1] = j;
+                    return arr;
+                }
+            }
+        }
+        arr[0] = -1;
+        arr[1] = -1;
+        return arr;
     }
 }
 
